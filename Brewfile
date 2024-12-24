@@ -48,6 +48,8 @@ cask "alt-tab"
 cask "balenaetcher"
 # Cross platform SQL editor and database management app
 cask "beekeeper-studio"
+# Display management tool
+cask "betterdisplay"
 # Open-source code editor
 cask "visual-studio-code"
 # Keyboard configurator
