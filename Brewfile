@@ -29,6 +29,8 @@ brew "rustup"
 brew "smartmontools"
 # Graphical command-line client for SSH
 brew "sshs"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
 # Text interface for Git repositories
 brew "tig"
 # Terminal multiplexer
@@ -46,4 +48,9 @@ cask "alt-tab"
 cask "balenaetcher"
 # Cross platform SQL editor and database management app
 cask "beekeeper-studio"
+# Open-source code editor
 cask "visual-studio-code"
+# Keyboard configurator
+cask "via"
+# Video communication and virtual meeting platform
+cask "zoom"
