@@ -56,3 +56,5 @@ cask "visual-studio-code"
 cask "via"
 # Video communication and virtual meeting platform
 cask "zoom"
+
+cask "font-fira-code-nerd-font"
