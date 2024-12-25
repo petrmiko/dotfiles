@@ -1,6 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-export ZDOTDIR="$HOME/.zsh"
-export ZSH_COMPDUMP="$ZDOTDIR/cache/.zcompdump-$HOST"
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 
 ZSH_THEME="agnoster"
 HIST_STAMPS="dd.mm.yyyy"
