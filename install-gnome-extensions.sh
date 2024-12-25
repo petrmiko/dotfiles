@@ -2,6 +2,8 @@
 
 set -eu
 
+PATH="$HOME/.local/bin:$PATH"
+
 if ! command -v gext --version 2>&1 >/dev/null; then
     pipx install gnome-extensions-cli --system-site-packages
 fi

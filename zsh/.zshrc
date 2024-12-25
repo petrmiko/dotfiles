@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$(hostname)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
