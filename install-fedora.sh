@@ -98,3 +98,20 @@ if ! command -v 1password --version 2>&1 >/dev/null; then
 else
     echo "1Password is already installed"
 fi
+
+# nerd fonts
+echo "Installing Nerd fonts"
+rm -rf /tmp/fonts
+mkdir /tmp/fonts
+mkdir -p "$HOME/.local/share/fonts"
+
+echo "Fetching CascadiaCode..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
+echo "Fetching FireCode..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+echo "Fetching Meslo..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
+echo "Unpacking fonts..."
+unzip -q -o "/tmp/fonts/*.zip" -d "/tmp/fonts"
+mv -f -t "$HOME/.local/share/fonts" /tmp/fonts/*.ttf
+echo "Rebuilding font cache..."
+fc-cache
+
+echo "Done"
