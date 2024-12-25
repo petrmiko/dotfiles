@@ -1,6 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 
+export PATH="$HOME/.local/bin:$PATH"
+
+if [ -d "$HOME/.local/share/fnm" ]; then
+    export FNM_HOME="$HOME/.local/share/fnm"
+    export PATH="$FNM_HOME:$PATH"
+fi
+
 ZSH_THEME="agnoster"
 HIST_STAMPS="dd.mm.yyyy"
 export FZF_DEFAULT_OPTS="--multi --preview=\"bat --color=always {}\""
