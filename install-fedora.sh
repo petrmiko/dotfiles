@@ -4,6 +4,9 @@ set -eu
 
 sudo dnf update -y
 
+# build utils
+sudo dnf install -y @c-development
+
 # console utils
 sudo dnf install -y stow \
     git tig \
@@ -64,4 +67,11 @@ if ! command -v zed --version 2>&1 >/dev/null; then
     curl -f https://zed.dev/install.sh | sh
 else
     echo "Zed is already installed"
+fi
+
+# Rust
+if ! command -v rustup --version 2>&1 >/dev/null; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+    echo "Rust is already installed"
 fi
