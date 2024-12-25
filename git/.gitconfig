@@ -3,3 +3,5 @@
 	email = miko.petr@gmail.com
 [core]
 	editor = code --wait
+[pull]
+	rebase = true
