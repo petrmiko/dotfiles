@@ -19,3 +19,6 @@ gnome_extensions=(
 echo "Installing Gnome extensions"
 gext --dbus install ${gnome_extensions[@]}
 gext --dbus enable ${gnome_extensions[@]}
+
+# start on Desktop, not Overview
+dconf write /org/gnome/shell/extensions/just-perfection/startup-status 0
