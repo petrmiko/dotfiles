@@ -28,6 +28,8 @@ fi
 echo "Applying dotfiles"
 stow zsh \
     alacritty
+sudo rm /etc/dnf/dnf.conf
+sudo stow -t / dnf
 
 # change shell
 if [ ! "$SHELL" == "/usr/bin/zsh" ]; then
