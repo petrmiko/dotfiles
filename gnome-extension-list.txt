@@ -1,0 +1,6 @@
+https://extensions.gnome.org/extension/4944 # App Icons Taskbar
+https://extensions.gnome.org/extension/615 # AppIndicator and KStatusNotifierItem Support 
+https://extensions.gnome.org/extension/3193 # Blur My Shell
+https://extensions.gnome.org/extension/3843 # Just perfection
+https://extensions.gnome.org/extension/5112 # Tailscale status
+https://extensions.gnome.org/extension/1460 # vitals
