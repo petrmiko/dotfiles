@@ -11,6 +11,7 @@ sudo dnf install -y @c-development
 sudo dnf install -y stow \
     git tig \
     eza fd-find fzf tmux zoxide \
+    fastfetch \
     btop htop \
     bat nano jq \
     zsh
