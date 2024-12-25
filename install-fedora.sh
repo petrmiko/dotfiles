@@ -14,6 +14,7 @@ sudo dnf install -y stow \
     fastfetch \
     btop htop \
     bat nano jq \
+    pipx \
     zsh
 
 # gui DNF apps
@@ -42,13 +43,10 @@ if [ ! "$SHELL" == "/usr/bin/zsh" ]; then
 fi
 
 # install flatpaks
-echo "Installing flatpaks"
-flatpak install -y --or-update \
-    com.mattjakeman.ExtensionManager \
-    com.github.tchx84.Flatseal \
-    io.beekeeperstudio.Studio \
-    io.missioncenter.MissionCenter \
-    io.podman_desktop.PodmanDesktop
+sh ./install-flatpaks.sh
+
+# gnome extensions
+sh ./install-gnome-extensions.sh
 
 # install additional apps outside of fedora repos
 echo "Installing tools outside default DNF or Flatpak repos"
