@@ -40,7 +40,17 @@ if [ ! "$SHELL" == "/usr/bin/zsh" ]; then
     chsh -s /usr/bin/zsh
 fi
 
+# install flatpaks
+echo "Installing flatpaks"
+flatpak install -y --or-update \
+    com.mattjakeman.ExtensionManager \
+    com.github.tchx84.Flatseal \
+    io.beekeeperstudio.Studio \
+    io.missioncenter.MissionCenter \
+    io.podman_desktop.PodmanDesktop
+
 # install additional apps outside of fedora repos
+echo "Installing tools outside default DNF or Flatpak repos"
 # VS Code
 if ! command -v code -v 2>&1 >/dev/null; then
     echo "Installing VS Code"
@@ -74,4 +84,16 @@ if ! command -v rustup --version 2>&1 >/dev/null; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 else
     echo "Rust is already installed"
+fi
+
+# 1Password
+if ! command -v 1password --version 2>&1 >/dev/null; then
+    sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
+    sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
+    sudo dnf install 1password --skip-unavailable # Asahi not supported yet
+    if ! command -v 1password --version 2>&1 >/dev/null; then
+        echo "1Password could not be installed, install it manually https://support.1password.com/install-linux/#other-distributions-or-arm-targz"
+    fi
+else
+    echo "1Password is already installed"
 fi
