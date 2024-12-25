@@ -10,7 +10,7 @@ sudo dnf install -y @c-development
 # console utils
 sudo dnf install -y stow \
     git tig \
-    eza fd-find fzf tmux zoxide \
+    eza fd-find fzf ripgrep tmux zoxide \
     fastfetch \
     btop htop \
     bat nano jq \
