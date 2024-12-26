@@ -16,4 +16,5 @@ brew bundle install
 
 git clone https://github.com/petrmiko/dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
+rm $HOME/.zprofile $HOME/.zshrc || true
 stow alacritty git zsh
