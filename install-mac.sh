@@ -16,5 +16,7 @@ if [ ! -d "/opt/homebrew" ]; then
     /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+git clone https://github.com/petrmiko/dotfiles.git $HOME/.dotfiles
+cd $HOME/.dotfiles
 stow alacritty git zsh
 brew bundle install
