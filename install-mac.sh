@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Tailscale
+set -eu
+
 if ! command -v xcode-select -p 2>&1 >/dev/null; then
     echo "Installing XCode Commandline Tools"
     sudo xcode-select --install
