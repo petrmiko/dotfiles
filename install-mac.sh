@@ -37,3 +37,5 @@ if ! command -v rustup --version 2>&1 >/dev/null; then
 else
     echo "Rust is already installed"
 fi
+
+echo "Done. Open a new terminal to see the changes."
