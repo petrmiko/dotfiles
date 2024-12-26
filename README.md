@@ -5,7 +5,7 @@ Collection of personal dotfiles and install scripts.
 ## MacOS
 Run in terminal
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/petrmiko/dotfiles/master/install-mac.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/petrmiko/dotfiles/main/install-mac.sh)"
 ```
 
 ## Fedora
