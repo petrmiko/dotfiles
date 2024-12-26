@@ -29,4 +29,11 @@ fi
 
 # install remaining dependencies
 echo "Installing remaining brew dependencies"
-brew bundle install
+brew bundle install || true
+
+# Rust
+if ! command -v rustup --version 2>&1 >/dev/null; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+    echo "Rust is already installed"
+fi

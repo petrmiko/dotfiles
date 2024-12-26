@@ -22,8 +22,6 @@ brew "htop"
 brew "jq"
 # Postgres C API library
 brew "libpq", link: true
-# Rust toolchain installer
-brew "rustup"
 # SMART hard drive monitoring
 brew "smartmontools"
 # Graphical command-line client for SSH
@@ -39,6 +37,10 @@ brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 
+cask "font-fira-code-nerd-font"
+
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Enable Windows-like alt-tab
@@ -55,5 +57,3 @@ cask "visual-studio-code"
 cask "via"
 # Video communication and virtual meeting platform
 cask "zoom"
-
-cask "font-fira-code-nerd-font"
