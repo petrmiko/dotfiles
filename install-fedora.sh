@@ -20,6 +20,14 @@ sudo dnf install -y stow \
 # gui DNF apps
 sudo dnf install -y alacritty solaar
 
+# enable RPM Fusion
+sudo dnf install -y \
+    https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# install HEIF/HEIC libs to see iPhone photos
+sudo dnf install -y heif-pixbuf-loader libheif-tools libheif-freeworld 
+
 # fetch tools not present in fedora repos
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
