@@ -42,6 +42,10 @@ if [ ! "$SHELL" == "/usr/bin/zsh" ]; then
     chsh -s /usr/bin/zsh
 fi
 
+# set icons
+sudo dnf install gnome-tweaks papirus-icon-theme
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+
 # install flatpaks
 sh ./install-flatpaks.sh
 
@@ -50,13 +54,18 @@ sh ./install-gnome-extensions.sh
 
 # install additional apps outside of fedora repos
 echo "Installing tools outside default DNF or Flatpak repos"
+
+# ghostty
+sudo dnf copr enable pgdev/ghostty 
+sudo dnf install ghostty -y
+
 # VS Code
 if ! command -v code -v 2>&1 >/dev/null; then
     echo "Installing VS Code"
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
     dnf check-update
-    sudo dnf install code
+    sudo dnf install code -y
 else
     echo "VS Code is already installed"
 fi
@@ -64,7 +73,7 @@ fi
 # Tailscale
 if ! command -v tailscale --version 2>&1 >/dev/null; then
     sudo dnf config-manager addrepo --overwrite --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-    sudo dnf install tailscale
+    sudo dnf install tailscale -y
     sudo systemctl enable --now tailscaled
     sudo tailscale up
 else
@@ -89,7 +98,7 @@ fi
 if ! command -v 1password --version 2>&1 >/dev/null; then
     sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
     sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
-    sudo dnf install 1password --skip-unavailable # Asahi not supported yet
+    sudo dnf install 1password -y --skip-unavailable # Asahi not supported yet
     if ! command -v 1password --version 2>&1 >/dev/null; then
         echo "1Password could not be installed, install it manually https://support.1password.com/install-linux/#other-distributions-or-arm-targz"
     fi
