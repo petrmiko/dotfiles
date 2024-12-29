@@ -1,4 +1,5 @@
 theme = "Obsidian"
+background-opacity = 0.9
 font-family = "FiraCode Nerd Font Mono"
 font-size = 14
 
