@@ -24,7 +24,7 @@ else
     git clone https://github.com/petrmiko/dotfiles.git $HOME/.dotfiles
     rm $HOME/.zprofile $HOME/.zshrc || true
     cd $HOME/.dotfiles
-    stow alacritty git zsh
+    stow alacritty fastfetch ghostty git zsh
 fi
 
 # install remaining dependencies
