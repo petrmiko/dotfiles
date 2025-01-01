@@ -40,7 +40,10 @@ fi
 # apply dotfiles
 echo "Applying dotfiles"
 stow zsh \
-    alacritty
+    alacritty \
+    ghostty \
+    fastfetch
+
 sudo rm /etc/dnf/dnf.conf
 sudo stow -t / dnf
 
