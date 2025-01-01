@@ -5,7 +5,7 @@ opacity=0.9
 
 [font]
 normal = { family = "JetBrains Mono" }
-size = 13
+size = 14
 
 [selection]
 save_to_clipboard = true
