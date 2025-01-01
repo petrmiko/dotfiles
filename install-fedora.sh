@@ -54,6 +54,13 @@ fi
 sudo dnf install gnome-tweaks papirus-icon-theme
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 
+# set fonts
+sudo dnf install -y jetbrains-mono-fonts
+gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 13'
+
+# set window minimize,maximize,close in window decoratins
+gsettings set org.gnome.desktop.wm.preferences button-layout 'icon:minimize,maximize,close'
+
 # install flatpaks
 sh ./install-flatpaks.sh
 
@@ -113,20 +120,5 @@ if ! command -v 1password --version 2>&1 >/dev/null; then
 else
     echo "1Password is already installed"
 fi
-
-# nerd fonts
-echo "Installing Nerd fonts"
-rm -rf /tmp/fonts
-mkdir /tmp/fonts
-mkdir -p "$HOME/.local/share/fonts"
-
-echo "Fetching CascadiaCode..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
-echo "Fetching FireCode..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-echo "Fetching Meslo..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
-echo "Unpacking fonts..."
-unzip -q -o "/tmp/fonts/*.zip" -d "/tmp/fonts"
-mv -f -t "$HOME/.local/share/fonts" /tmp/fonts/*.ttf
-echo "Rebuilding font cache..."
-fc-cache
 
 echo "Done"

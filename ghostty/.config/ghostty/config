@@ -1,7 +1,6 @@
 theme = "Obsidian"
 background-opacity = 0.9
-font-family = "FiraCode Nerd Font Mono"
-font-size = 14
+font-size = 13
 
 window-padding-x = 5
 window-padding-y = 5

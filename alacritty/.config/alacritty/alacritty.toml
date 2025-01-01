@@ -4,8 +4,8 @@ dimensions = { columns = 110, lines = 30 }
 opacity=0.9
 
 [font]
-normal = { family = "FiraCode Nerd Font", style = "Retina" }
-size = 14
+normal = { family = "JetBrains Mono" }
+size = 13
 
 [selection]
 save_to_clipboard = true
