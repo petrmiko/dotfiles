@@ -3,7 +3,7 @@
   "logo": {
     "padding": {"top": 1}
   },
-  "display": {"separator": " » "},
+  "display": {"separator": " ❱ "},
   "modules": [
     "title",
     "separator",
