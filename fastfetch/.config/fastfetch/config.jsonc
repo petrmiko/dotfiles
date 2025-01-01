@@ -1,0 +1,35 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "padding": {"top": 1}
+  },
+  "display": {"separator": " » "},
+  "modules": [
+    "title",
+    "separator",
+  
+    "os",
+    "host",
+    "kernel",
+
+    "break",
+    "shell",
+    "packages",
+    "terminal",
+
+    "break",
+    "cpu",
+    "gpu",
+    {"type": "memory", "percent": {"type": 3}},
+    {"type": "cpuusage", "percent": {"type": 3}},
+    "loadavg",
+
+    "break",
+    {"type": "battery", "percent": {"type": 3}},
+    "poweradapter",
+
+    "break",
+    "localip",
+    "dns"
+  ]
+}
