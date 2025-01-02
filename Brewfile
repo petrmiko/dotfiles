@@ -38,7 +38,7 @@ brew "yazi"
 brew "zoxide"
 
 cask "font-fira-code-nerd-font"
-cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
 
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
