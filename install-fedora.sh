@@ -15,10 +15,11 @@ sudo dnf install -y stow \
     btop htop \
     bat nano jq \
     pipx \
+    postgresql \
     zsh
 
 # gui DNF apps
-sudo dnf install -y alacritty solaar
+sudo dnf install -y alacritty firefox solaar
 
 # enable RPM Fusion
 sudo dnf install -y \
