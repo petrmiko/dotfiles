@@ -66,13 +66,24 @@ rm -rf /tmp/fonts
 mkdir /tmp/fonts
 mkdir -p "$HOME/.local/share/fonts"
 
-echo "Fetching FireCode..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-echo "Fetching JetBrainsMono..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-echo "Unpacking fonts..."
-unzip -q -o "/tmp/fonts/*.zip" -d "/tmp/fonts"
-mv -f -t "$HOME/.local/share/fonts" /tmp/fonts/*.ttf
-echo "Rebuilding font cache..."
-fc-cache
+
+if [ ! -f "$HOME/.local/share/fonts/FiraCodeNerdFont-Regular.ttf" ]; then
+    echo "Fetching FiraCode..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+else
+    echo "FiraCode already installed..."
+fi
+if [ ! -f "$HOME/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf" ]; then
+    echo "Fetching JetBrainsMono..." && wget -q --directory-prefix=/tmp/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+else
+    echo "JetBrainsMono already installed..."
+fi
+if [ ! -z "$( ls -A '/tmp/fonts' )" ]; then
+    echo "Unpacking fonts..."
+    unzip -q -o "/tmp/fonts/*.zip" -d "/tmp/fonts"
+    mv -f -t "$HOME/.local/share/fonts" /tmp/fonts/*.ttf
+    echo "Rebuilding font cache..."
+    fc-cache
+fi
 
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 13'
 
@@ -89,7 +100,7 @@ sh ./install-gnome-extensions.sh
 echo "Installing tools outside default DNF or Flatpak repos"
 
 # ghostty
-sudo dnf copr enable pgdev/ghostty 
+sudo dnf copr enable pgdev/ghostty -y
 sudo dnf install ghostty -y
 
 # VS Code
