@@ -52,6 +52,8 @@ cask "balenaetcher"
 cask "beekeeper-studio"
 # Display management tool
 cask "betterdisplay"
+# Web browser
+cask "firefox"
 # Open-source code editor
 cask "visual-studio-code"
 # Keyboard configurator
