@@ -4,8 +4,8 @@ set -eu
 
 sudo dnf update -y
 
-# build utils
-sudo dnf install -y @c-development
+# build utils and dependencies
+sudo dnf install -y @c-development openssl-devel
 
 # console utils
 sudo dnf install -y stow \
