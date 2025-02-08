@@ -20,6 +20,8 @@ brew "git"
 brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Modern and intuitive terminal-based text editor
+brew "micro"
 # Postgres C API library
 brew "libpq", link: true
 # SMART hard drive monitoring

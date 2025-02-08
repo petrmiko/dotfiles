@@ -13,7 +13,7 @@ sudo dnf install -y stow \
     eza fd-find fzf ripgrep tmux zoxide \
     fastfetch \
     btop htop \
-    bat nano jq \
+    bat nano micro jq \
     pipx \
     postgresql \
     zsh

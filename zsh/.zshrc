@@ -2,6 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$(hostname)"
 
 export PATH="$HOME/.local/bin:$PATH"
+export EDITOR="micro"
 
 if [ -d "$HOME/.local/share/fnm" ]; then
     export FNM_HOME="$HOME/.local/share/fnm"
