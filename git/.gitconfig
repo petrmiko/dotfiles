@@ -5,3 +5,7 @@
 	editor = code --wait
 [pull]
 	rebase = true
+[pretty]
+	one = format:%Cblue%an %Cgreen%h%  %Cblue%ci%Creset %s
+[format]
+	pretty = one
