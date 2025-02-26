@@ -31,7 +31,7 @@ sudo dnf install -y heif-pixbuf-loader libheif-tools libheif-freeworld
 
 # fetch tools not present in fedora repos
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 fi
 
 if [ ! -d "$HOME/.local/share/fnm" ]; then
@@ -49,7 +49,8 @@ echo "Applying dotfiles"
 stow zsh \
     alacritty \
     ghostty \
-    fastfetch
+    fastfetch \
+    starship
 
 sudo rm /etc/dnf/dnf.conf
 sudo stow -t / dnf
