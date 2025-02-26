@@ -28,6 +28,8 @@ brew "libpq", link: true
 brew "smartmontools"
 # Graphical command-line client for SSH
 brew "sshs"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Text interface for Git repositories
