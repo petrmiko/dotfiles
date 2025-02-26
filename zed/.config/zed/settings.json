@@ -1,7 +1,11 @@
 // # https://zed.dev/docs/configuring-zed
 {
+  "icon_theme": "Catppuccin Macchiato",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "base_keymap": "VSCode",
-  "theme": "Ayu Dark",
+  "theme": "macOS Classic Dark",
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "ui_font_family": "JetBrainsMono Nerd Font",
