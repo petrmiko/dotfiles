@@ -38,6 +38,12 @@ if [ ! -d "$HOME/.local/share/fnm" ]; then
     curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.local/share/fnm" --skip-shell
 fi
 
+if ! command -v starship --version 2>&1 >/dev/null; then
+    curl -sS https://starship.rs/install.sh | sh -s -- --yes
+else
+    echo "Starship is already installed"
+fi
+
 # apply dotfiles
 echo "Applying dotfiles"
 stow zsh \
