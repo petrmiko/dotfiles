@@ -47,4 +47,4 @@ description = "Reads current Maratonec environment from .env"
 os = "macos"
 command = 'head -n 1 .env | grep -oEi ": (.*)$" | cut -c3-'
 style='bold yellow'
-format = '[\[env » $output\]]($style) '
+format = '[\[$output\]]($style) '
