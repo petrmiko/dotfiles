@@ -3,9 +3,13 @@
 	email = miko.petr@gmail.com
 [core]
 	editor = code --wait
+[merge]
+	tool = code
 [pull]
 	rebase = true
 [pretty]
 	one = format:%Cblue%an %Cgreen%h%  %Cblue%ci%Creset %s
+[fetch]
+	prune = true
 [format]
 	pretty = one
