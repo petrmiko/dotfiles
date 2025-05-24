@@ -1,0 +1,23 @@
+# OS specific
+.DS_Store
+
+# temporary files or backups
+*.bak
+*.log
+*.tmp
+
+# environment files
+.env
+.env.local
+
+# IDE specific
+.idea/
+.vscode/
+
+# Node.js specific
+build/
+dist/
+node_modules/
+coverage/
+logs/
+

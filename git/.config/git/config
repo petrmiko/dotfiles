@@ -3,13 +3,22 @@
 	email = miko.petr@gmail.com
 [core]
 	editor = code --wait
+	excludesFile = ~/.config/git/ignore
 [merge]
 	tool = code
 [pull]
+	autostash = true
 	rebase = true
 [pretty]
 	one = format:%Cblue%an %Cgreen%h%  %Cblue%ci%Creset %s
 [fetch]
 	prune = true
+	tags = true
 [format]
 	pretty = one
+[status]
+	branch = true
+	short = true
+	show-stash = true
+[include]
+    path = ~/.gitconfig.local
