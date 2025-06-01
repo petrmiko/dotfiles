@@ -1,17 +1,19 @@
 // # https://zed.dev/docs/configuring-zed
 {
-  "icon_theme": "Catppuccin Macchiato",
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "base_keymap": "VSCode",
-  "theme": "macOS Classic Dark",
-  "buffer_font_size": 14,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_features": {
-    "liga": true
-  },
-  "preview_tabs": {
-    "enabled": false
-  }
+	"icon_theme": "Catppuccin Macchiato",
+	"features": {
+		"edit_prediction_provider": "zed"
+	},
+	"base_keymap": "VSCode",
+	"theme": "macOS Classic Dark",
+	"buffer_font_size": 14,
+	"buffer_font_family": "JetBrainsMono Nerd Font",
+	"ui_font_features": {
+		"liga": true
+	},
+	"preview_tabs": {
+		"enabled": false
+	},
+	"show_whitespaces": "all",
+	"hard_tabs": true
 }
