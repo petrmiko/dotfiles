@@ -2,8 +2,11 @@
 	name = Petr Miko
 	email = miko.petr@gmail.com
 [core]
+	compression = 9
 	editor = code --wait
 	excludesFile = ~/.config/git/ignore
+[help]
+	autocorrect = 1
 [merge]
 	tool = code
 [pull]
@@ -21,4 +24,4 @@
 	short = true
 	show-stash = true
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
