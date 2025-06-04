@@ -1,5 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
+export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
+
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="micro"
 export FZF_DEFAULT_OPTS="--multi --preview=\"bat --color=always {}\""
