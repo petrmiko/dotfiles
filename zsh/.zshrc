@@ -1,3 +1,5 @@
+export LANG="cs_CZ.UTF-8"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
