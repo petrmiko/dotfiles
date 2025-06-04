@@ -1,10 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
-
 export PATH="$HOME/.local/bin:$PATH"
-export EDITOR="micro"
-export FZF_DEFAULT_OPTS="--multi --preview=\"bat --color=always {}\""
 
 if [ -d "$HOME/.local/share/fnm" ]; then
     export FNM_HOME="$HOME/.local/share/fnm"
@@ -29,12 +26,16 @@ command_exists() {
 	command -v "$@" > /dev/null 2>&1 && [ -x "$(command -v $@)" ]
 }
 
-eval "$(zoxide init --cmd j zsh)"
-eval "$(fzf --zsh)"
-command_exists fnm && eval "$(fnm env --use-on-cd)"
-command_exists starship && eval "$(starship init zsh)"
+if command_exists micro; then
+    export EDITOR="micro"
+else
+    export EDITOR="nano"
+fi
 
-autoload -Uz compinit && compinit
+if command_exists command_exists fzf; then
+    export FZF_DEFAULT_OPTS="--multi --preview=\"bat --color=always {}\""
+    eval "$(fzf --zsh)"
+fi
 
 if command_exists eza; then
     alias ls="eza --group-directories-first --icons"
@@ -42,3 +43,9 @@ if command_exists eza; then
 else
     alias ll="ls -la"
 fi
+
+command_exists zoxide && eval "$(zoxide init --cmd j zsh)"
+command_exists fnm && eval "$(fnm env --use-on-cd)"
+command_exists starship && eval "$(starship init zsh)"
+
+autoload -Uz compinit && compinit
