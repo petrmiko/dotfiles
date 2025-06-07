@@ -29,7 +29,7 @@ format = '[$symbol$branch(:$remote_branch)]($style) '
 style = "bold blue"
 
 [git_status]
-format = '[\[$conflicted$deleted$renamed$modified$staged$untracked\]]($style) '
+format = '([󰊢 $conflicted$deleted$renamed$modified$staged$untracked]($style) )'
 
 [nodejs]
 format = '[\[$symbol$version\]]($style) '
