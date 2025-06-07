@@ -4,6 +4,8 @@ tap "homebrew/bundle"
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
 # Modern, maintained replacement for ls
 brew "eza"
 # Like neofetch, but much faster because written mostly in C

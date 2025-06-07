@@ -8,10 +8,12 @@ sudo dnf update -y
 sudo dnf install -y @c-development openssl-devel
 
 # console utils
-sudo dnf install -y stow \
+sudo dnf install --skip-unavailable -y stow \
     git tig \
-    eza fd-find fzf ripgrep tmux zoxide \
+    eza \
+    fd-find fzf ripgrep tmux zoxide \
     fastfetch \
+    duf \
     btop htop \
     bat nano micro jq \
     pipx \
@@ -141,6 +143,7 @@ fi
 # Rust
 if ! command -v rustup --version 2>&1 >/dev/null; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    cargo install cargo-update eza
 else
     echo "Rust is already installed"
 fi
