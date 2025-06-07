@@ -38,6 +38,8 @@ brew "tig"
 brew "tmux"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 

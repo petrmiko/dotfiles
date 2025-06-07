@@ -6,6 +6,10 @@ export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
 export PATH="$HOME/.local/bin:$PATH"
 
+command_exists() {
+	command -v "$@" > /dev/null 2>&1 && [ -x "$(command -v $@)" ]
+}
+
 if [ -d "$HOME/.local/share/fnm" ]; then
     export FNM_HOME="$HOME/.local/share/fnm"
     export PATH="$FNM_HOME:$PATH"
@@ -20,14 +24,19 @@ ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
 ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
 
 plugins=(
+    colored-man-pages
     history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
 
-command_exists() {
-	command -v "$@" > /dev/null 2>&1 && [ -x "$(command -v $@)" ]
-}
+# Syntax highlighting plugin
+if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # Linux
+fi
+if command_exists brew && [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # macOS
+fi
 
 if command_exists micro; then
     export EDITOR="micro"
