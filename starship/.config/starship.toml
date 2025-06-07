@@ -38,7 +38,7 @@ format = '[\[$symbol$version\]]($style) '
 disabled = true
 
 [username]
-format = '[$user]($style)'
+format = '[$user]($style) ❯ '
 
 [hostname]
 format = '[$ssh_symbol$hostname]($style) '
