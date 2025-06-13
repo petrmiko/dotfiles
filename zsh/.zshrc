@@ -25,7 +25,6 @@ ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
 
 plugins=(
     colored-man-pages
-    history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -56,6 +55,7 @@ else
     alias ll="ls -la"
 fi
 
+command_exists atuin && eval "$(atuin init zsh)"
 command_exists zoxide && eval "$(zoxide init --cmd j zsh)"
 command_exists fnm && eval "$(fnm env --use-on-cd)"
 command_exists starship && eval "$(starship init zsh)"
