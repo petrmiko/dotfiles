@@ -1,8 +1,6 @@
 export LANG="cs_CZ.UTF-8"
 export LC_ALL="cs_CZ.UTF-8"
 
-export ZSH="$HOME/.oh-my-zsh"
-
 export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -19,15 +17,18 @@ if [ -d "$HOME/.cargo" ]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-HIST_STAMPS="dd.mm.yyyy"
-ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
-ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
+if [ -d "$HOME/.oh-my-zsh" ]; then
+    export ZSH="$HOME/.oh-my-zsh"
+    HIST_STAMPS="dd.mm.yyyy"
+    ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+    ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
 
-plugins=(
-    colored-man-pages
-)
+    plugins=(
+        colored-man-pages
+    )
 
-source $ZSH/oh-my-zsh.sh
+    source $ZSH/oh-my-zsh.sh
+fi
 
 # Syntax highlighting plugin
 if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
