@@ -5,7 +5,9 @@ set -eu
 sudo dnf update -y
 
 # build utils and dependencies
-sudo dnf install -y @c-development openssl-devel
+sudo dnf install -y @c-development openssl-devel \
+    ncurses \
+    glibc-langpack-cs
 
 # console utils
 sudo dnf install --skip-unavailable -y stow \
@@ -51,9 +53,12 @@ fi
 echo "Applying dotfiles"
 stow zsh \
     alacritty \
+    atuin \
+    git \
     ghostty \
     fastfetch \
-    starship
+    starship \
+    tmux
 
 sudo rm /etc/dnf/dnf.conf
 sudo stow -t / dnf
