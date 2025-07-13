@@ -11,7 +11,6 @@ sudo dnf install -y @c-development openssl-devel \
 
 # console utils
 sudo dnf install --skip-unavailable -y stow \
-    atuin \
     git tig \
     eza \
     fd-find fzf ripgrep tmux zoxide \

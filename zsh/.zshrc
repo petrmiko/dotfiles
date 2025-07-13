@@ -25,6 +25,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 
     plugins=(
         colored-man-pages
+        history-substring-search
     )
 
     source $ZSH/oh-my-zsh.sh
@@ -44,11 +45,6 @@ else
     export EDITOR="nano"
 fi
 
-if command_exists command_exists fzf; then
-    export FZF_DEFAULT_OPTS="--multi --preview=\"bat --color=always {}\""
-    eval "$(fzf --zsh)"
-fi
-
 if command_exists eza; then
     alias ls="eza --group-directories-first --icons"
     alias ll="ls -la --git"
@@ -56,9 +52,9 @@ else
     alias ll="ls -la"
 fi
 
-command_exists atuin && eval "$(atuin init zsh)"
 command_exists zoxide && eval "$(zoxide init --cmd j zsh)"
 command_exists fnm && eval "$(fnm env --use-on-cd)"
+command_exists fzf && eval "$(fzf --zsh)"
 command_exists starship && eval "$(starship init zsh)"
 
 autoload -Uz compinit && compinit
