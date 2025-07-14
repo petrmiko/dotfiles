@@ -62,3 +62,8 @@ autoload -Uz compinit && compinit
 if command_exists tmux && [ -n "$PS1" ] && [ -z "$TMUX" ] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
   tmux new-session -A -s main
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/petr/.lmstudio/bin"
+# End of LM Studio CLI section
+
