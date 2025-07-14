@@ -58,3 +58,7 @@ command_exists fzf && eval "$(fzf --zsh)"
 command_exists starship && eval "$(starship init zsh)"
 
 autoload -Uz compinit && compinit
+
+if command_exists tmux && [ -n "$PS1" ] && [ -z "$TMUX" ]; then
+  tmux new-session -A -s main
+fi
