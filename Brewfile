@@ -2,6 +2,8 @@ tap "homebrew/bundle"
 
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
 # Disk Usage/Free Utility - a better 'df' alternative
