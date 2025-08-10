@@ -2,7 +2,7 @@ export LANG="cs_CZ.UTF-8"
 export LC_ALL="cs_CZ.UTF-8"
 
 export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 command_exists() {
 	command -v "$@" > /dev/null 2>&1 && [ -x "$(command -v $@)" ]
@@ -51,6 +51,8 @@ if command_exists eza; then
 else
     alias ll="ls -la"
 fi
+alias lzd='lazydocker'
+alias lzg='lazygit'
 
 command_exists zoxide && eval "$(zoxide init --cmd j zsh)"
 command_exists fnm && eval "$(fnm env --use-on-cd)"
