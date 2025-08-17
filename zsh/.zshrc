@@ -54,6 +54,7 @@ fi
 alias lzd='lazydocker'
 alias lzg='lazygit'
 
+command_exists atuin && eval "$(atuin init zsh)"
 command_exists zoxide && eval "$(zoxide init --cmd j zsh)"
 command_exists fnm && eval "$(fnm env --use-on-cd)"
 command_exists fzf && eval "$(fzf --zsh)"
