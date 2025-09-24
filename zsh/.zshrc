@@ -48,6 +48,11 @@ if command_exists eza; then
 else
     alias ll="ls -la"
 fi
+
+if command_exists batcat; then
+    alias bat="batcat"
+fi
+
 alias lzd='lazydocker'
 alias lzg='lazygit'
 
