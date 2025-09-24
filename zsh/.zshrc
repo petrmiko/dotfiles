@@ -36,8 +36,8 @@ if command_exists brew && [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/z
     source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # macOS
 fi
 
-if command_exists micro; then
-    export EDITOR="micro"
+if command_exists nvim; then
+    export EDITOR="nvim"
 else
     export EDITOR="nano"
 fi
