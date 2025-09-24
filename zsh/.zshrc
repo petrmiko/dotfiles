@@ -47,7 +47,7 @@ fi
 
 if command_exists eza; then
     alias ls="eza --group-directories-first --icons"
-    alias ll="ls -la --git"
+    alias ll="ls -lga --git"
 else
     alias ll="ls -la"
 fi
