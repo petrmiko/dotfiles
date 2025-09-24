@@ -1,6 +1,3 @@
-export LANG="cs_CZ.UTF-8"
-export LC_ALL="cs_CZ.UTF-8"
-
 export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
 export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
