@@ -19,11 +19,13 @@
 	"formatter": "language_server",
 	"languages": {
 		"JavaScript": {
+			"formatter": "prettier",
 			"code_actions_on_format": {
 				"source.fixAll.eslint": true
 			}
 		},
 		"TypeScript": {
+			"formatter": "prettier",
 			"code_actions_on_format": {
 				"source.fixAll.eslint": true
 			}
