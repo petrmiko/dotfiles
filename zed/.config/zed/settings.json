@@ -2,17 +2,13 @@
 {
 	"icon_theme": "Catppuccin Macchiato",
 	"features": {
-		"edit_prediction_provider": "zed"
+		"edit_prediction_provider": "zed",
 	},
 	"base_keymap": "VSCode",
-	"theme": "macOS Classic Dark",
-	"buffer_font_size": 14,
+	"theme": "Carbonfox - opaque",
 	"buffer_font_family": "JetBrainsMono Nerd Font",
-	"ui_font_features": {
-		"liga": true
-	},
 	"preview_tabs": {
-		"enabled": false
+		"enabled": false,
 	},
 	"show_whitespaces": "all",
 	"hard_tabs": true,
@@ -21,14 +17,14 @@
 		"JavaScript": {
 			"formatter": "prettier",
 			"code_actions_on_format": {
-				"source.fixAll.eslint": true
-			}
+				"source.fixAll.eslint": true,
+			},
 		},
 		"TypeScript": {
 			"formatter": "prettier",
 			"code_actions_on_format": {
-				"source.fixAll.eslint": true
-			}
-		}
-	}
+				"source.fixAll.eslint": true,
+			},
+		},
+	},
 }
