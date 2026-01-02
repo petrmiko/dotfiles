@@ -5,7 +5,7 @@
 		"edit_prediction_provider": "zed",
 	},
 	"base_keymap": "VSCode",
-	"theme": "Carbonfox - opaque",
+	"theme": "Carbonfox",
 	"buffer_font_family": "JetBrainsMono Nerd Font",
 	"preview_tabs": {
 		"enabled": false,
