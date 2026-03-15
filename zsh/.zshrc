@@ -4,13 +4,14 @@ export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.lmstudio/bin:$PATH"
 export LANG=cs_CZ.UTF-8
 export LC_ALL=cs_CZ.UTF-8
 
-command_exists() {
-	command -v "$@" > /dev/null 2>&1 && [ -x "$(command -v $@)" ]
-}
+command_exists() { (( $+commands[$1] || $+functions[$1] )) }
 
-if [ -d "$HOME/.local/share/fnm" ]; then
-    export FNM_HOME="$HOME/.local/share/fnm"
-    export PATH="$FNM_HOME:$PATH"
+# Syntax highlighting plugin
+if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # Linux
+fi
+if command_exists brew && [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # macOS
 fi
 
 if [ -d "$HOME/.cargo" ]; then
@@ -22,21 +23,17 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
     HIST_STAMPS="dd.mm.yyyy"
     ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
     ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
+    ZOXIDE_CMD_OVERRIDE="j"
 
     plugins=(
         colored-man-pages
         history-substring-search
+        mise
+        starship
+        zoxide
     )
 
     source $ZSH/oh-my-zsh.sh
-fi
-
-# Syntax highlighting plugin
-if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-    source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # Linux
-fi
-if command_exists brew && [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # macOS
 fi
 
 if command_exists nvim; then
@@ -60,10 +57,7 @@ alias lzd='lazydocker'
 alias lzg='lazygit'
 
 command_exists atuin && eval "$(atuin init zsh)"
-command_exists zoxide && eval "$(zoxide init --cmd j zsh)"
-command_exists fnm && eval "$(fnm env --use-on-cd)"
-command_exists fzf && eval "$(fzf --zsh)"
-command_exists mise && eval "$(mise activate zsh)"
-command_exists starship && eval "$(starship init zsh)"
 
-autoload -Uz compinit && compinit
+if ! command_exists omz; then
+    autoload -Uz compinit && compinit
+fi
