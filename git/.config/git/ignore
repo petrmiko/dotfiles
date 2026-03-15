@@ -6,6 +6,10 @@
 *.log
 *.tmp
 
+# mise-en-place
+mise.local.toml
+mise.*.local.toml
+
 # environment files
 .env
 .env.local
