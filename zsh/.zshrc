@@ -1,5 +1,5 @@
 export TERM="xterm-256color" # avoid issues with some apps in alacritty or ghostty
-export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.lmstudio/bin:$PATH"
 
 export LANG=cs_CZ.UTF-8
 export LC_ALL=cs_CZ.UTF-8
@@ -63,6 +63,7 @@ command_exists atuin && eval "$(atuin init zsh)"
 command_exists zoxide && eval "$(zoxide init --cmd j zsh)"
 command_exists fnm && eval "$(fnm env --use-on-cd)"
 command_exists fzf && eval "$(fzf --zsh)"
+command_exists mise && eval "$(mise activate zsh)"
 command_exists starship && eval "$(starship init zsh)"
 
 autoload -Uz compinit && compinit
