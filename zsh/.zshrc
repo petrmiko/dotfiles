@@ -27,6 +27,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 
     plugins=(
         colored-man-pages
+        fzf
         history-substring-search
         mise
         starship
