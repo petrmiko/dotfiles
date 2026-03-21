@@ -58,6 +58,7 @@ alias lzd='lazydocker'
 alias lzg='lazygit'
 
 command_exists atuin && eval "$(atuin init zsh)"
+command_exists wt && eval "$(command wt config shell init zsh)"
 
 if ! command_exists omz; then
     autoload -Uz compinit && compinit
