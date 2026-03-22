@@ -1,8 +1,6 @@
 if [ -d "/opt/homebrew" ]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
-if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+elif [ -d "/home/linuxbrew/.linuxbrew" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
