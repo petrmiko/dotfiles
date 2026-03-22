@@ -12,6 +12,10 @@ fi
 
 if [ -d "$HOME/.oh-my-zsh" ]; then
     export ZSH="$HOME/.oh-my-zsh"
+elif [ -d "/usr/share/oh-my-zsh" ]; then
+    export ZSH="/usr/share/oh-my-zsh"
+fi
+if [ -f "$ZSH/oh-my-zsh.sh" ]; then
     HIST_STAMPS="dd.mm.yyyy"
     ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
     ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
