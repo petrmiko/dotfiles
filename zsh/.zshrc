@@ -6,8 +6,12 @@ export LC_ALL=cs_CZ.UTF-8
 
 command_exists() { (( $+commands[$1] || $+functions[$1] )) }
 
-if [ -d "$HOME/.cargo" ]; then
-    export PATH="$HOME/.cargo/bin:$PATH"
+# Syntax highlighting plugin
+if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # Linux
+fi
+if command_exists brew && [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # macOS
 fi
 
 if [ -d "$HOME/.oh-my-zsh" ]; then
@@ -26,6 +30,7 @@ if [ -f "$ZSH/oh-my-zsh.sh" ]; then
         fzf
         history-substring-search
         mise
+        rust
         starship
         zoxide
     )
