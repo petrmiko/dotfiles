@@ -19,9 +19,11 @@ mise.*.local.toml
 .vscode/
 
 # Node.js specific
-build/
-dist/
-node_modules/
-coverage/
-logs/
+/build/
+/dist/
+/node_modules/
+/coverage/
+/logs/
 
+
+**/.claude/settings.local.json
