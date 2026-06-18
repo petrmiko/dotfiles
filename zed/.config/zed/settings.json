@@ -37,6 +37,12 @@
 		"dark": "Carbonfox"
 	},
 	"buffer_font_family": "JetBrainsMono Nerd Font",
+	"buffer_font_fallbacks": [
+		"Noto Color Emoji"
+	],
+	"ui_font_fallbacks": [
+		"Noto Color Emoji"
+	],
 	"preview_tabs": {
 		"enabled": false,
 	},
