@@ -6,6 +6,12 @@ export LC_ALL=cs_CZ.UTF-8
 
 command_exists() { (( $+commands[$1] || $+functions[$1] )) }
 
+if [ -d "/opt/homebrew" ]; then
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -d "/home/linuxbrew/.linuxbrew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # Syntax highlighting plugin
 if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
     source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # Linux
