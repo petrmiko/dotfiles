@@ -60,7 +60,7 @@ else
 fi
 
 if command_exists eza; then
-    alias ls="eza --group-directories-first --icons"
+    alias ls="eza --group-directories-first --icons=auto"
     alias ll="ls -lga --git"
 else
     alias ll="ls -la"
