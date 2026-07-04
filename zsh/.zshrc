@@ -79,3 +79,7 @@ command_exists wt && eval "$(command wt config shell init zsh)"
 if ! command_exists omz; then
     autoload -Uz compinit && compinit
 fi
+
+if command_exists tmux && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+    tmux attach-session -t main || tmux new-session -s main
+fi
