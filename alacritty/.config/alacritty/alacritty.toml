@@ -2,6 +2,7 @@
 padding = { x = 5, y = 5 }
 dimensions = { columns = 110, lines = 30 }
 opacity=0.9
+option_as_alt = "Both"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
