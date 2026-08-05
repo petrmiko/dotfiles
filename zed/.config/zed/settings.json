@@ -1,11 +1,28 @@
 // # https://zed.dev/docs/configuring-zed
 {
-	"edit_predictions": {
-		"provider": "copilot"
+	"diff_view_style": "split",
+ "cli_default_open_behavior": "existing_window",
+ "edit_predictions": {
+		"ollama": {
+   "max_output_tokens": 512,
+   "model": "qwen2.5-coder:3b-base",
+   "api_url": "http://localhost:11434"
+  },
+  "open_ai_compatible_api": {
+   "api_url": "",
+   "model": ""
+  },
+  "provider": "ollama"
 	},
 	"agent_servers": {
-		"claude-acp": {
-			"type": "registry"
+		"cursor": {
+   "type": "registry"
+  },
+  "claude-acp": {
+			"default_config_options": {
+    "model": "opus"
+   },
+   "type": "registry"
 		}
 	},
 	"project_panel": {
@@ -18,7 +35,8 @@
 		"dock": "left"
 	},
 	"agent": {
-		"dock": "right",
+		"sidebar_side": "right",
+  "dock": "right",
 		"favorite_models": [],
 		"model_parameters": []
 	},

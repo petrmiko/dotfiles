@@ -34,7 +34,6 @@ if [ -f "$ZSH/oh-my-zsh.sh" ]; then
     plugins=(
         colored-man-pages
         fzf
-        history-substring-search
         mise
         rust
         starship
