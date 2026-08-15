@@ -11,3 +11,11 @@ model = "fast"
 [daemon]
 enabled = true
 autostart = true
+
+[pty_proxy]
+enabled = true
+
+[tmux]
+enabled = true
+width = "80%"
+height = "60%"
