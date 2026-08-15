@@ -2,3 +2,12 @@ style = "compact"
 inline_height = 20
 enter_accept= true
 ctrl_n_shortcuts = true
+search_mode = "daemon-fuzzy"
+
+[ai]
+enabled = true
+model = "fast"
+
+[daemon]
+enabled = true
+autostart = true
