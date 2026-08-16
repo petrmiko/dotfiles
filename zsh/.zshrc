@@ -72,6 +72,7 @@ fi
 alias lzd='lazydocker'
 alias lzg='lazygit'
 
+ZSH_ARGZERO=${commands[zsh]:-$ZSH_ARGZERO}
 command_exists atuin && eval "$(atuin init zsh)"
 command_exists wt && eval "$(command wt config shell init zsh)"
 
