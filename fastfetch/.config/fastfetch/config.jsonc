@@ -1,35 +1,41 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "padding": {"top": 1}
+    "padding": {"top": 1, "right": 4}
   },
-  "display": {"separator": " ❱ "},
+  "display": {
+    "separator": "  ",
+    "key": {"width": 14},
+    "color": {"keys": "blue", "title": "bold_magenta", "separator": "90"},
+    "bar": {"char": {"elapsed": "■", "total": "·"}, "width": 12, "border": {"left": "", "right": ""}, "color": {"total": "90"}},
+    "percent": {"type": 3, "color": {"green": "green", "yellow": "yellow", "red": "red"}}
+  },
   "modules": [
     "title",
-    "separator",
-  
-    "os",
-    "host",
-    "kernel",
+    {"type": "separator", "string": "─"},
+
+    {"type": "os",       "key": "  os",       "keyColor": "magenta"},
+    {"type": "host",     "key": "󰌢  host",     "keyColor": "magenta"},
+    {"type": "kernel",   "key": "  kernel",   "keyColor": "magenta"},
 
     "break",
-    "shell",
-    "packages",
-    "terminal",
+    {"type": "shell",    "key": "  shell",    "keyColor": "cyan"},
+    {"type": "packages", "key": "󰏖  packages", "keyColor": "cyan"},
+    {"type": "terminal", "key": "  terminal", "keyColor": "cyan"},
 
     "break",
-    "cpu",
-    "gpu",
-    {"type": "memory", "percent": {"type": 3}},
-    {"type": "cpuusage", "percent": {"type": 3}},
-    "loadavg",
+    {"type": "cpu",      "key": "  cpu",      "keyColor": "green"},
+    {"type": "gpu",      "key": "󰢮  gpu",      "keyColor": "green"},
+    {"type": "memory",   "key": "󰍛  memory",   "keyColor": "green"},
+    {"type": "cpuusage", "key": "󰓅  usage",    "keyColor": "green"},
+    {"type": "loadavg",  "key": "󰊚  load",     "keyColor": "green"},
 
     "break",
-    {"type": "battery", "percent": {"type": 3}},
-    "poweradapter",
+    {"type": "battery",      "key": "󰁹  battery", "keyColor": "yellow"},
+    {"type": "poweradapter", "key": "󰚥  power",   "keyColor": "yellow"},
 
     "break",
-    "localip",
-    "dns"
+    {"type": "localip",  "key": "󰩟  local ip", "keyColor": "blue"},
+    {"type": "dns",      "key": "󰖟  dns",      "keyColor": "blue"}
   ]
 }
