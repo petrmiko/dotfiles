@@ -6,7 +6,7 @@
   "display": {
     "separator": "  ",
     "key": {"width": 14},
-    "color": {"keys": "blue", "title": "bold_magenta", "separator": "90"},
+    "color": {"keys": "blue", "title": "1;35", "separator": "90"},
     "bar": {"char": {"elapsed": "■", "total": "·"}, "width": 12, "border": {"left": "", "right": ""}, "color": {"total": "90"}},
     "percent": {"type": 3, "color": {"green": "green", "yellow": "yellow", "red": "red"}}
   },
