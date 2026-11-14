@@ -31,11 +31,11 @@
     {"type": "loadavg",  "key": "󰊚  load",     "keyColor": "green"},
 
     "break",
-    {"type": "battery",      "key": "󰁹  battery", "keyColor": "yellow"},
-    {"type": "poweradapter", "key": "󰚥  power",   "keyColor": "yellow"},
+    {"type": "localip",  "key": "󰩟  local ip", "keyColor": "blue"},
+    {"type": "dns",      "key": "󰖟  dns",      "keyColor": "blue"},
 
     "break",
-    {"type": "localip",  "key": "󰩟  local ip", "keyColor": "blue"},
-    {"type": "dns",      "key": "󰖟  dns",      "keyColor": "blue"}
+    {"type": "battery",      "key": "󰁹  battery", "keyColor": "yellow"},
+    {"type": "poweradapter", "key": "󰚥  power",   "keyColor": "yellow"}
   ]
 }
