@@ -4,3 +4,19 @@ node = "26"
 [settings]
 idiomatic_version_file_enable_tools = ['node']
 
+[bootstrap.settings.macos.defaults."com.apple.dock"]
+autohide = true
+autohide-time-modifier = 0.0
+autohide-delay = 0.0
+launchanim = false
+minimize-to-application = true
+show-recents = false
+
+[bootstrap.settings.macos.defaults."com.apple.finder"]
+ShowPathbar = true
+ShowStatusBar = true
+FXPreferredViewStyle = "Nlsv"
+
+[bootstrap.hooks]
+# mise doesn't relaunch apps, so Dock/Finder changes would only show after logout
+post-defaults = "killall Dock Finder"
